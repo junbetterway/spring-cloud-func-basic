@@ -1,6 +1,6 @@
 # Java Spring Cloud Function Basic
 
-[Spring Cloud Function](https://spring.io/projects/spring-cloud-function) is a Spring project with the following high-level goals:
+__[Spring Cloud Function](https://spring.io/projects/spring-cloud-function)__ is a Spring project with the following high-level goals:
 
 * Promote the implementation of business logic via functions.
 * Decouple the development lifecycle of business logic from any specific runtime target so that the same code can run as a web endpoint, a stream processor, or a task.
@@ -11,7 +11,7 @@ It abstracts away all of the transport details and infrastructure, allowing the 
 
 This __[repository](https://github.com/junbetterway/spring-cloud-func-basic)__ aims to do a basic introduction on using this amazing project. There is no datastore or complicated dependencies here, we just want a quick introduction on how to convert business rules into functions. In simplicity, we will be needing two endpoints as an example for an __Account module__ - create and read. We will be faking the create endpoint wherein, whatever your throw will be returned as is.
 
-__[Spring Cloud v3.1.1](https://docs.spring.io/spring-cloud-function/docs/3.1.1/reference/html/spring-cloud-function.html#_functional_bean_definitions)__ supports a "functional" style of bean declarations for small apps where you need fast startup unlike the traditional bean definitions. See [this link](https://spring.io/blog/2018/10/22/functional-bean-registrations-in-spring-cloud-function) for a detailed comparison of cold starts in AWS. 
+__[Spring Cloud v3.1.1](https://docs.spring.io/spring-cloud-function/docs/3.1.1/reference/html/spring-cloud-function.html#_functional_bean_definitions)__ supports a "functional" style of bean declarations for small apps where you need fast startup unlike the traditional bean definitions. See __[this link](https://spring.io/blog/2018/10/22/functional-bean-registrations-in-spring-cloud-function)__ for a detailed comparison of cold starts in AWS. 
 
 Now for the functional bean style - the user application code can be recast into "functional" form, like how I did in our entry-point __[SpringcloudfuncApplication.class](https://github.com/junbetterway/spring-cloud-func-basic/blob/main/src/main/java/com/junbetterway/serverless/springcloudfunc/SpringcloudfuncApplication.java)__:
 
