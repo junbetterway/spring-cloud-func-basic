@@ -47,7 +47,7 @@ Lastly, we need to make sure that we add __[spring-cloud-starter-function-webflu
 </dependency>
 ```
 
-*__Note:__ We need to use the webflux starter function dependency since we are using __functional bean style__ here wherein the functional form of the embedded Servlet container has not yet been implemented - see this reported __[issue](https://github.com/spring-cloud/spring-cloud-function/issues/459#issuecomment-602556423)__ for more details.*
+*__Note:__ We need to use the webflux starter function dependency since we are using __functional bean style__ here wherein the functional form of the embedded Servlet container has not yet been implemented - see this reported __[issue](https://github.com/spring-cloud/spring-cloud-function/issues/459)__ for more details.*
 
 # Run the Spring Boot Application Using Spring Tool Suite (STS)
 1. Download STS version 3.4.* (or better) from the [Spring website](https://spring.io/tools). STS is a free Eclipse bundle with many features useful for Spring developers.
