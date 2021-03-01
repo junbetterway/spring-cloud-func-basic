@@ -11,9 +11,9 @@ It abstracts away all of the transport details and infrastructure, allowing the 
 
 This __[repository](https://github.com/junbetterway/spring-cloud-func-basic)__ aims to do a basic introduction on using this amazing project. There is no datastore or complicated dependencies here, we just want a quick introduction on how to convert business rules into functions. In simplicity, we will be needing two endpoints as an example for an __Account module__ - create and read. We will be faking the create endpoint wherein, whatever your throw will be returned as is.
 
-__[Spring Cloud v3.1.1](https://docs.spring.io/spring-cloud-function/docs/3.1.1/reference/html/spring-cloud-function.html#_functional_bean_definitions)__ supports a "functional" style of bean declarations for small apps where you need fast startup unlike the traditional bean definitions. See __[this link](https://spring.io/blog/2018/10/22/functional-bean-registrations-in-spring-cloud-function)__ for a detailed comparison of cold starts in AWS. 
+__[Spring Cloud v3.1.1](https://docs.spring.io/spring-cloud-function/docs/3.1.1/reference/html/spring-cloud-function.html#_functional_bean_definitions)__ supports a "functional" style of bean declarations for small apps where you need fast startup unlike the traditional bean definitions. See this __[link](https://spring.io/blog/2018/10/22/functional-bean-registrations-in-spring-cloud-function)__ for a detailed comparison of cold starts in AWS. 
 
-Now for the functional bean style - the user application code can be recast into "functional" form, like how I did in our entry-point __[SpringcloudfuncApplication.class](https://github.com/junbetterway/spring-cloud-func-basic/blob/main/src/main/java/com/junbetterway/serverless/springcloudfunc/SpringcloudfuncApplication.java)__:
+Now for the functional bean style - the user application code can be recast into "functional" form, like how I did in our entry-point __[SpringcloudfuncApplication](https://github.com/junbetterway/spring-cloud-func-basic/blob/main/src/main/java/com/junbetterway/serverless/springcloudfunc/SpringcloudfuncApplication.java)__.class:
 
 ```
 @SpringBootConfiguration	
@@ -37,6 +37,10 @@ public class SpringcloudfuncApplication implements ApplicationContextInitializer
 	
 }
 ```
+
+Lastly, we need to make sure that we add __[spring-cloud-starter-function-webflux](https://search.maven.org/classic/#search%7Cga%7C1%7Cspring-cloud-starter-function-webflux)__ dependency. It will act as the local adapter and will introduce necessary dependencies to the project in order to run functions in local environment. 
+
+*__Note:__ We need to use the webflux starter function dependency since we are using __functional bean style__ here wherein the functional form of the embedded Servlet container has not yet been implemented - see this reported __[issue]https://github.com/spring-cloud/spring-cloud-function/issues/459#issuecomment-602556423)__ for more details.*
 
 # Run the Spring Boot Application Using Spring Tool Suite (STS)
 1. Download STS version 3.4.* (or better) from the [Spring website](https://spring.io/tools). STS is a free Eclipse bundle with many features useful for Spring developers.
