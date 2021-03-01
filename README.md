@@ -40,6 +40,13 @@ public class SpringcloudfuncApplication implements ApplicationContextInitializer
 
 Lastly, we need to make sure that we add __[spring-cloud-starter-function-webflux](https://search.maven.org/classic/#search%7Cga%7C1%7Cspring-cloud-starter-function-webflux)__ dependency. It will act as the local adapter and will introduce necessary dependencies to the project in order to run functions in local environment. 
 
+```
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-function-webflux</artifactId>
+</dependency>
+```
+
 *__Note:__ We need to use the webflux starter function dependency since we are using __functional bean style__ here wherein the functional form of the embedded Servlet container has not yet been implemented - see this reported __[issue]https://github.com/spring-cloud/spring-cloud-function/issues/459#issuecomment-602556423)__ for more details.*
 
 # Run the Spring Boot Application Using Spring Tool Suite (STS)
